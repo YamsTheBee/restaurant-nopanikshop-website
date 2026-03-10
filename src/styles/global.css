@@ -1,0 +1,99 @@
+:root {
+  --np-orange: #e85d3f;
+  --np-teal: #4a9a93;
+  --np-yellow: #f19c38;
+  --np-dark: #1b2b2a;
+  --np-creme: #fcf9f1;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: var(--np-creme);
+  color: var(--np-dark);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* TITRES */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* BLOBS */
+
+.blob {
+  position: absolute;
+  z-index: -1;
+  filter: blur(50px);
+  opacity: 0.18;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+}
+
+/* IMAGES */
+
+.img-organic {
+  border-radius: 60px 20px 80px 30px;
+  transition: all 0.5s ease;
+}
+
+.img-organic:hover {
+  border-radius: 20px 60px 30px 80px;
+}
+
+/* BOUTON */
+
+.btn-groovy {
+  background-color: var(--np-orange);
+  color: white;
+  padding: 1.2rem 2.8rem;
+  border-radius: 50px 15px 40px 10px;
+  font-weight: 800;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 6px 6px 0px var(--np-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-groovy:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0px var(--np-teal);
+  border-radius: 15px 50px 10px 40px;
+}
+
+/* MENU CARD */
+
+.menu-card {
+  background: white;
+  border: 2px solid var(--np-dark);
+  border-radius: 40px 15px 40px 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 8px 8px 0px var(--np-orange);
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--np-creme);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--np-teal);
+  border-radius: 5px;
+}
