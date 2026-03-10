@@ -1,4 +1,4 @@
-import logo from "../assets/noPanikLogo.jpg";
+import logo from "../assets/images/noPanikLogo.jpg";
 
 const Navbar = () => {
   return (

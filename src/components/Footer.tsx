@@ -1,4 +1,4 @@
-import logo from "../assets/noPanikLogo.jpg";
+import logoNoPanik from "../assets/images/noPanikLogo.jpg";
 import { restaurantInfo } from "../data/restaurantData";
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
 
         <div className="text-center lg:text-left">
           <img
-            src={logo}
+            src={logoNoPanik}
             alt={restaurantInfo.name}
             className="h-25 mx-auto lg:mx-0 mb-6"
           />

@@ -1,15 +1,31 @@
 # NoPanik Shop & Restaurant Website
 
-Website showcase for **NoPanik Shop & Restaurant**, a Senegalese food spot in Paris.
+Website showcase for **NoPanik Shop & Restaurant**, a Senegalese restaurant and grocery store located in Paris.
 
 This project is a modern restaurant website built with **React, TypeScript, Vite and TailwindCSS**.
 
-The goal of this project is to create a clean and responsive website that highlights:
+The goal is to create a **clean, responsive and visually engaging website** that highlights:
 
 - the restaurant
-- the grocery store
-- the atmosphere and lifestyle around the brand
-- the menu and visual identity
+- the African grocery shop
+- the lifestyle and atmosphere of the place
+- the menu and visual identity of the brand
+
+---
+
+## Preview
+
+Restaurant website concept inspired by Afro-Caribbean food culture.
+
+Features:
+
+- Modern landing page
+- Restaurant presentation
+- Menu section
+- African grocery section
+- Barbershop section
+- Google Maps integration
+- Fully responsive design
 
 ---
 
@@ -40,6 +56,8 @@ src
 ├── data
 │ └── restaurantData.ts
 │
+├── assets
+│ └── images
 └── assets
 
 ---
@@ -58,6 +76,14 @@ Run the development server:
 
 npm run dev
 
+Build for production:
+
+npm run build
+
+Preview production build:
+
+npm run preview
+
 ---
 
 ## Environment variables
@@ -68,13 +94,20 @@ Create a `.env` file based on:
 
 ---
 
-## Purpose of the project
+---
 
-This project is part of my portfolio as a **full-stack web developer** and can also serve as a **restaurant website template**.
+## Purpose of the Project
+
+This project is part of my **developer portfolio** and demonstrates my ability to build modern and responsive websites using **React and TypeScript**.
+
+It can also serve as a **reusable restaurant website template** for small businesses.
 
 ---
 
 ## Author
 
-Mariama Diaw  
+**Mariama Diaw**  
 Full-stack Web Developer
+
+GitHub:  
+https://github.com/YamsTheBee

@@ -1,7 +1,7 @@
 // Images plats
-import maféImg from "../assets/mafé.jpg";
-import pastelsImg from "../assets/pastels.jpg";
-import rizAuPoisson from "../assets/rizAuPoisson.jpg";
+import maféImg from "../assets/images/mafé.jpg";
+import pastelsImg from  "../assets/images/pastels.jpg";
+import rizAuPoisson from "../assets/images/rizAuPoisson.jpg";
 
 const signatures = [
   {

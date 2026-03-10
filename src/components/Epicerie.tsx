@@ -1,5 +1,4 @@
-
-import bananePlantin from "../assets/bananePlantin.jpg";
+import bananePlantin from "../assets/images/bananePlantin.jpg";
 const epicerieItems = [
   {
     id: "epices",
@@ -14,8 +13,7 @@ const epicerieItems = [
     description: "Bananes plantains mûres, ignames et gombos.",
     image: bananePlantin,
   },
- 
-  
+
   {
     id: "drinks",
     title: "Drinks Frais",

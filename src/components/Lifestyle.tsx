@@ -1,4 +1,4 @@
-import LazetCutImg from "../assets/logoLazertCut.jpg";
+import LazetCutImg from "../assets/images/logoLazertCut.jpg";
 
 const Lifestyle = () => {
   return (
