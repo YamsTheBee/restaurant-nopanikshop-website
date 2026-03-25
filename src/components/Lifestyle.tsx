@@ -1,118 +1,145 @@
+import type React from "react";
 import LazetCutImg from "../assets/images/logoLazertCut.jpg";
 import footImg from "../assets/Img_foot.jpg";
 
-const Lifestyle = () => {
+const Lifestyle: React.FC = () => {
   return (
-    <section id="lifestyle" className="py-32 px-4 bg-np-dark overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* TITLE */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl  font-medium">
-            Plus qu'un{" "}
-            <span className="text-np-yellow underline decoration-wavy underline-offset-8">
-              Resto
-            </span>
+    <section
+      id="lifestyle"
+      className="relative py-24 px-6 overflow-hidden md:py-32"
+      style={{ backgroundColor: "var(--np-dark)" }}
+    >
+      {/* Background Decor */}
+      <div
+        className="blob w-[500px] h-[500px] top-[-10%] left-[-10%] opacity-10"
+        style={{ backgroundColor: "var(--np-teal)" }}
+      />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* HEADER */}
+        <div className="text-center mb-20">
+          <span className="inline-block px-4 py-1 mb-6 text-xs font-black uppercase tracking-[0.2em] rounded-full bg-white/10 text-white/60">
+            L'Esprit du Prado
+          </span>
+          <h2 className="text-[3.5rem] md:text-[6rem] leading-[0.9] font-black uppercase text-white m-0">
+            PLUS QU'UN <span style={{ color: "var(--np-orange)" }}>RESTO</span>
           </h2>
+          <p
+            className="mt-6 text-xl md:text-2xl italic handwritten"
+            style={{ color: "var(--np-yellow)" }}
+          >
+            Un lifestyle, une culture, une famille.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* EVENT CARD - Couleur Orange d'origine #E85D3F */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+          {/* EVENT CARD */}
           <article
             id="evenements"
-            className="bg-[#E85D3F] text-white p-12 rounded-[80px_20px_100px_40px] shadow-2xl relative overflow-hidden border-2 border-white/20 transition-transform duration-500 hover:-translate-y-2"
+            className="group relative p-10 md:p-12 rounded-[60px_20px_80px_30px] shadow-2xl transition-all duration-500 hover:-translate-y-4 flex flex-col justify-between border-2 border-white/10"
+            style={{ backgroundColor: "var(--np-orange)" }}
           >
-            <h3 className="text-2xl mb-6 leading-tight font-bold">
-              Privatisez Le Shop
-            </h3>
-
-            <p className="text-xl mb-12 opacity-95 leading-relaxed font-medium">
-              Anniversaire, Afterwork ou Tournage ?
-              <br />
-              Le Passage du Prado vous appartient le temps d'une soirée.
-            </p>
+            <div>
+              <h3 className="text-3xl font-black mb-6 leading-none uppercase text-white">
+                PRIVATISEZ <br />
+                LE SHOP
+              </h3>
+              <p className="text-lg mb-8 text-white/90 leading-relaxed font-medium font-['Space_Grotesk']">
+                Anniversaire, Afterwork ou Tournage ? Le Passage du Prado vous
+                appartient le temps d'une soirée mémorable.
+              </p>
+            </div>
 
             <a
               href="https://wa.me/33123456789"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-[#E85D3F] px-10 py-4 rounded-full font-black uppercase tracking-wider hover:bg-np-dark hover:text-white transition-all shadow-lg"
+              className="btn-groovy w-full text-center justify-center !bg-white !text-black shadow-none hover:!scale-105"
             >
-              Demander un devis
+              DEMANDER UN DEVIS
             </a>
           </article>
 
-          {/* FOOT CARD - Couleur Sombre d'origine #1F1F1F */}
+          {/* FOOT CARD - Look "Magazine" */}
           <article
-            className="p-10 rounded-[40px_40px_10px_10px] shadow-xl relative overflow-hidden border-2 border-black/5 flex flex-col items-center transition-transform duration-500 hover:-translate-y-2"
-            style={{ backgroundColor: "#1F1F1F", color: "white" }}
+            className="group relative p-8 rounded-[30px] shadow-2xl border-2 border-white/5 flex flex-col transition-all duration-500 hover:-translate-y-4 overflow-hidden"
+            style={{ backgroundColor: "#151515" }}
           >
-            <div className="absolute top-4 right-4 animate-pulse">
-              <span className="bg-red-600 text-[10px] font-black px-2 py-1 rounded">
-                LIVE
+            <div className="absolute top-6 right-6 z-20">
+              <span className="bg-red-600 text-[10px] font-black px-3 py-1 rounded-full text-white animate-pulse">
+                LIVE MATCH
               </span>
             </div>
 
-            <div className="w-full mb-6 overflow-hidden rounded-xl">
+            <div className="relative mb-8 overflow-hidden rounded-2xl h-56">
               <img
                 src={footImg}
-                alt="Ambiance Match de Foot"
-                className="w-full h-48 object-cover shadow-lg"
-                loading="lazy"
+                alt="Match de Foot"
+                className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#151515] to-transparent opacity-60" />
             </div>
 
-            <h3 className="text-3xl font-black mb-4 leading-none uppercase text-center">
-              Matchs de Foot
+            <h3 className="text-3xl font-black mb-4 uppercase text-white">
+              VIBREZ <span style={{ color: "var(--np-teal)" }}>FOOT</span>
             </h3>
-
-            <p className="text-lg mb-8 opacity-90 font-medium leading-tight text-center">
-              Vivez les plus grandes affiches sur écran géant. Ambiance stade
-              garantie !
+            <p className="text-sm mb-8 text-white/70 font-['Space_Grotesk'] italic">
+              Écran géant, ambiance de stade et saveurs du pays. Les grandes
+              affiches se vivent ici, ensemble.
             </p>
 
-            <div className="flex gap-4 justify-center">
-              <span className="text-2xl" role="img" aria-label="ballon">
-                ⚽
-              </span>
-              <span className="text-2xl" role="img" aria-label="trophée">
-                🏆
-              </span>
-              <span className="text-2xl" role="img" aria-label="feu">
-                🔥
-              </span>
+            <div className="flex gap-3 mt-auto">
+              {["⚽", "🏆", "🔥"].map((emoji) => (
+                <span
+                  key={emoji}
+                  className="text-2xl grayscale group-hover:grayscale-0 transition-all"
+                >
+                  {emoji}
+                </span>
+              ))}
             </div>
           </article>
 
-          {/* BARBER CARD - Couleur Teal d'origine #4A9A93 */}
+          {/* BARBER CARD */}
           <article
             id="coiffure"
-            className="bg-[#4A9A93] text-white p-12 rounded-[20px_80px_40px_100px] shadow-2xl relative border-2 border-white/20 transition-transform duration-500 hover:-translate-y-2"
+            className="group relative p-10 md:p-12 rounded-[20px_60px_30px_80px] shadow-2xl transition-all duration-500 hover:-translate-y-4 border-2 border-white/10"
+            style={{ backgroundColor: "var(--np-teal)" }}
           >
-            <div className="flex flex-col md:flex-row items-center gap-8 mb-10">
-              <img
-                src={LazetCutImg}
-                alt="Lazer Cuts Barbershop"
-                className="h-40 w-40 rounded-full border-4 border-white object-cover shadow-2xl"
-                loading="lazy"
-              />
+            <div className="flex flex-col items-center text-center gap-6 mb-8">
+              <div className="relative">
+                <img
+                  src={LazetCutImg}
+                  alt="Lazer Cuts"
+                  className="h-32 w-32 rounded-full border-4 border-white object-cover shadow-2xl transition-transform group-hover:rotate-12"
+                />
+                <div className="absolute -bottom-2 -right-2 bg-white text-black p-2 rounded-full shadow-lg">
+                  ✂️
+                </div>
+              </div>
 
-              <div className="text-center md:text-left">
-                <h3 className="text-3xl leading-none mb-2 font-bold">
-                  Lazer Cuts
+              <div>
+                <h3 className="text-3xl font-black uppercase text-white mb-1">
+                  LAZER CUTS
                 </h3>
-                <span className="text-np-yellow text-l font-bold uppercase tracking-widest">
+                <span
+                  className="text-sm font-black uppercase tracking-[0.2em]"
+                  style={{ color: "var(--np-yellow)" }}
+                >
                   Fresh Barbershop
                 </span>
               </div>
             </div>
 
-            <p className="text-xl opacity-95 mb-10 leading-relaxed italic">
+            <p className="text-lg text-white/90 leading-relaxed italic text-center font-['Space_Grotesk']">
               "Prenez soin de votre style avant de régaler vos papilles."
-              <br />
-              Le combo parfait du 10ème arrondissement.
             </p>
 
-            <div className="h-2 w-24 bg-white/30 rounded-full" />
+            <div className="mt-10 pt-6 border-t border-white/10 text-center">
+              <p className="text-[10px] uppercase font-black tracking-widest text-white/40">
+                Situé à l'étage du shop
+              </p>
+            </div>
           </article>
         </div>
       </div>
