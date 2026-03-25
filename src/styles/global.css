@@ -1,9 +1,26 @@
+/* 1. IMPORTS (Toujours en premier) */
+
+/* 2. VARIABLES */
 :root {
   --np-orange: #e85d3f;
   --np-teal: #4a9a93;
   --np-yellow: #f19c38;
   --np-dark: #1b2b2a;
   --np-creme: #fcf9f1;
+
+  /* On ajoute les variables du menu ici aussi pour la cohérence */
+  --m-orange: #e85d3f;
+  --m-teal: #3d7a74;
+  --m-yellow: #d98324;
+  --m-dark: #1a1a1a;
+  --m-beige: #f5f2ed;
+}
+
+/* 3. RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,42 +29,49 @@ body {
   color: var(--np-dark);
   scroll-behavior: smooth;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* TITRES */
-
+/* 4. TYPOGRAPHIE GLOBALE */
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: "Syne", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  line-height: 0.95;
 }
 
-/* BLOBS */
+/* Classe utilitaire pour l'écriture manuscrite utilisable partout */
+.handwritten {
+  font-family: "Permanent Marker", cursive !important;
+  text-transform: none;
+}
 
+/* 5. COMPOSANTS (Blobs, Buttons, Cards) */
 .blob {
   position: absolute;
   z-index: -1;
-  filter: blur(50px);
-  opacity: 0.18;
+  filter: blur(60px);
+  opacity: 0.25;
   border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  pointer-events: none;
 }
-
-/* IMAGES */
 
 .img-organic {
   border-radius: 60px 20px 80px 30px;
-  transition: all 0.5s ease;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  object-fit: cover;
 }
 
 .img-organic:hover {
   border-radius: 20px 60px 30px 80px;
+  transform: scale(1.02);
 }
-
-/* BOUTON */
 
 .btn-groovy {
   background-color: var(--np-orange);
@@ -55,45 +79,200 @@ h4 {
   padding: 1.2rem 2.8rem;
   border-radius: 50px 15px 40px 10px;
   font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 6px 6px 0px var(--np-dark);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  cursor: pointer;
+  border: none;
 }
 
 .btn-groovy:hover {
-  transform: translate(-3px, -3px);
+  transform: translate(-4px, -4px);
   box-shadow: 10px 10px 0px var(--np-teal);
   border-radius: 15px 50px 10px 40px;
 }
 
-/* MENU CARD */
-
 .menu-card {
   background: white;
-  border: 2px solid var(--np-dark);
+  border: 2.5px solid var(--np-dark);
   border-radius: 40px 15px 40px 15px;
   padding: 1.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .menu-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 8px 8px 0px var(--np-orange);
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 12px 12px 0px var(--np-orange);
 }
 
-/* SCROLLBAR */
-
+/* 6. SCROLLBAR & ANIMATIONS (Le reste de ton code inchangé) */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--np-creme);
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--np-teal);
-  border-radius: 5px;
+  border: 3px solid var(--np-creme);
+  border-radius: 10px;
+}
+
+@keyframes revealTaste {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.reveal-taste {
+  animation: revealTaste 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes bounceDown {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(12px);
+    opacity: 1;
+  }
+}
+
+.scroll-arrow {
+  animation: bounceDown 2s infinite ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  display: flex;
+  animation: slide 30s linear infinite;
+  will-change: transform;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(15deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-floating {
+  animation: floating 4s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+/* --- SECTION TÉMOIGNAGES (ClientReviews) AVEC GRAIN DE PAPIER --- */
+
+.review-card {
+  min-width: calc(33.333% - 1.5rem);
+  background-color: white; /* Couleur de fond de base */
+
+  /* Ajout de la texture de grain de papier répétitive */
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+  background-repeat: repeat; /* Le motif se répète */
+  background-position: center; /* Centrer le motif */
+
+  border: 2px solid var(--np-dark);
+  border-radius: 40px 15px 40px 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  /* Optionnel : Ajuster l'opacité de la texture pour un effet plus subtil */
+  /* background-blend-mode: overlay; */
+}
+
+/* Le reste du style reste inchangé */
+.review-card:hover {
+  transform: translateY(-10px) rotate(-1deg);
+  box-shadow: 10px 10px 0px var(--np-teal);
+}
+
+.review-avatar-container {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  border: 3px solid var(--np-orange);
+  overflow: hidden;
+}
+
+.review-avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-restaurant-img {
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.review-card:hover .review-restaurant-img {
+  filter: grayscale(0%);
+}
+
+.review-comment {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--np-dark);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.review-footer {
+  margin-top: auto;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--np-orange);
 }

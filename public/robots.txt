@@ -1,0 +1,15 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Autoriser tous les robots (Google, Bing, etc.) à indexer le site
+User-agent: *
+Allow: /
+
+# Interdire l'accès aux fichiers de logs et de configuration sensibles
+Disallow: /chatbot_logs.json
+Disallow: /data_validation/
+Disallow: /.env
+Disallow: /utils/
+
+# Indiquer l'emplacement du sitemap pour aider le référencement
+# Remplace par ton vrai domaine une fois en ligne
+Sitemap: https://ton-domaine.com/sitemap.xml

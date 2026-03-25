@@ -1,0 +1,129 @@
+{
+  "plats": [
+    {
+      "name": "Thieb Poisson",
+      "price": 13,
+      "description": "Poisson farci aux herbes & épices, légumes et riz cuits dans la sauce."
+    },
+    {
+      "name": "Thieb Poulet",
+      "price": 10,
+      "description": "Poulet farci aux herbes & épices, légumes et riz cuits dans la sauce."
+    },
+    {
+      "name": "Attieké Poisson",
+      "price": 12,
+      "description": "Semoule de manioc, servie avec poisson braisé."
+    },
+    {
+      "name": "Tilapia Grillé",
+      "price": 13,
+      "description": "Accompagnement au choix (riz, aloko ou atiéké)."
+    },
+    {
+      "name": "Daurade Grillée",
+      "price": 15,
+      "description": "Accompagnement au choix (riz, aloko ou atiéké)."
+    },
+    {
+      "name": "Mafé",
+      "price": 12,
+      "description": "Sauce à base d'arachides et viande de boeuf."
+    },
+    {
+      "name": "Vermicelles",
+      "price": 12,
+      "description": "Plat à base de vermicelles et de poulet."
+    },
+    {
+      "name": "Dibi (poulet ou mouton)",
+      "price": 15,
+      "description": "Morceaux de viandes braisés, accompagnés de crudités."
+    }
+  ],
+  "platsSpeciaux": [
+    {
+      "name": "Étodié",
+      "price": 13,
+      "description": "Plat à base de feuilles de manioc, viande & poisson fumé. Servi avec riz blanc."
+    },
+    {
+      "name": "Soupoukandja",
+      "price": 13,
+      "description": "Plat à base de gombo, boeuf, poisson fumé, fruits de mer & crabe. Servi avec riz blanc."
+    }
+  ],
+  "snacks": [
+    {
+      "name": "Fatayas",
+      "prices": { "petit": 5, "grand": 10 },
+      "description": "Petits chaussons frits, thon ou boeuf haché, sauce tomate & oignons."
+    },
+    {
+      "name": "Aloko",
+      "price": 5,
+      "description": "Morceaux de bananes plantains frits."
+    },
+    {
+      "name": "Sandwich",
+      "price": 5,
+      "description": "Demi baguette au choix : Thon, ndambe (haricots rouges), omelette ou brochettes."
+    },
+    {
+      "name": "Ailes de Poulet",
+      "prices": { "petit": 5, "grand": 10 },
+      "description": "Ailes de poulet braisées, sauce."
+    }
+  ],
+  "desserts": [
+    {
+      "name": "Thiakry",
+      "price": 4,
+      "description": "Préparation douce et crémeuse à base de semoule de mil & yaourt parfumé."
+    },
+    { "name": "Beignets", "price": 3.5, "description": "Croquettes." }
+  ],
+  "boissons": {
+    "chaudes": [
+      { "name": "Expresso", "price": 1.5 },
+      { "name": "Café Long", "price": 2.5 },
+      { "name": "Thé", "price": 1 },
+      { "name": "Café Touba", "price": 1 },
+      { "name": "Café Tangana", "price": 2 }
+    ],
+    "softs": [
+      { "name": "Tas Mango Passion", "price": 3 },
+      { "name": "Bissap", "price": 4 },
+      { "name": "Gingembre", "price": 4 },
+      { "name": "Baobab", "price": 4 },
+      { "name": "Ditakh", "price": 5 },
+      { "name": "Sodas", "price": 2.5 },
+      { "name": "Redbull", "price": 3 }
+    ],
+    "alcools": [
+      { "name": "Punch Maison", "prices": { "verre": 3, "petite": 6 } },
+      {
+        "name": "Jack Daniel's",
+        "prices": { "verre": 8, "petite": 15, "grande": 35 },
+        "note": "*tarif à 40€ après 23h"
+      },
+      {
+        "name": "Vodka / Rhum (20cl)",
+        "prices": { "verre": 3, "bouteille": 5 },
+        "note": "**tarif à 7€ après 23h"
+      },
+      { "name": "Vin", "prices": { "verre": 3, "petite": 5, "grande": 10 } }
+    ],
+    "bieres": [
+      { "name": "Leffe", "prices": { "33cl": 2, "50cl": 3, "70cl": 5 } },
+      { "name": "Guinness", "price": 4 },
+      { "name": "Heineken", "prices": { "33cl": 2, "50cl": 3, "70cl": 5 } },
+      { "name": "Pelforth", "price": 3, "size": "50cl" },
+      { "name": "Desperados", "prices": { "33cl": 2, "50cl": 3, "70cl": 5 } }
+    ],
+    "formules": [
+      { "name": "Guinness x3 (33cl)", "price": 12 },
+      { "name": "Heineken x3 (70cl)", "price": 12 }
+    ]
+  }
+}

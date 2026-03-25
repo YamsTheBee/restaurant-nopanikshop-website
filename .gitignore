@@ -11,6 +11,7 @@ build/
 
 logs
 *.log
+chatbot_logs.json
 
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +23,4 @@ Thumbs.db
 
 coverage/
 *.tsbuildinfo
+

@@ -40,25 +40,16 @@ Features:
 
 ## Project Structure
 
-src
-├── components
-│ ├── Navbar.tsx
-│ ├── Hero.tsx
-│ ├── Restaurant.tsx
-│ ├── Epicerie.tsx
-│ ├── Menu.tsx
-│ ├── Lifestyle.tsx
-│ └── Footer.tsx
-│
-├── pages
-│ └── Home.tsx
-│
-├── data
-│ └── restaurantData.ts
-│
-├── assets
-│ └── images
-└── assets
+.
+├── public # Assets statiques (robots.txt, favicon)
+├── src
+│ ├── components # Composants UI réutilisables
+│ ├── pages # Pages de l'application
+│ ├── data # Données statiques (Menu, prix)
+│ ├── assets # Images optimisées et styles
+│ └── utils # Fonctions utilitaires (Validation, formatage)
+├── .env.sample # Exemple de configuration
+└── chatbot_logs.json # Logs du backend (à garder hors du dossier public)
 
 ---
 
@@ -93,6 +84,12 @@ Create a `.env` file based on:
 .env.sample
 
 ---
+
+## 🔒 Security Note
+
+- Never commit the `.env` file or `chatbot_logs.json` to version control.
+- Ensure all sensitive data validation is handled server-side.
+- The `public/robots.txt` is configured to prevent indexing of sensitive directories.
 
 ---
 
