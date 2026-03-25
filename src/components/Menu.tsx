@@ -32,82 +32,43 @@ const signatures = [
 const Menu: React.FC = () => {
   const [activeSheet, setActiveSheet] = useState<"food" | "drinks">("food");
 
-  const colors = {
-    orange: "#E85D3F",
-    teal: "#3D7A74",
-    yellow: "#D98324",
-    dark: "#1A1A1A",
-    beige: "#F5F2ED",
-  };
-
-  const baseReset: React.CSSProperties = {
-    margin: 0,
-    padding: 0,
-    boxSizing: "border-box",
-    textTransform: "none",
-    letterSpacing: "normal",
-  };
-
   return (
     <section
+      className="relative z-50 w-full min-h-screen pb-20 overflow-x-hidden"
       style={{
-        ...baseReset,
-        backgroundColor: colors.beige,
+        backgroundColor: "var(--np-creme)",
         backgroundImage:
           "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
-        minHeight: "100vh",
-        color: colors.dark,
-        fontFamily: "'Space Grotesk', sans-serif",
-        paddingBottom: "80px",
-        width: "100%",
-        position: "relative",
-        zIndex: 50,
       }}
     >
-      <header
-        style={{
-          padding: "60px 20px",
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "'Syne', sans-serif",
-            fontSize: "clamp(3.5rem, 8vw, 6rem)",
-            fontWeight: 900,
-            textTransform: "uppercase",
-            lineHeight: 0.9,
-            margin: 0,
-          }}
-        >
-          NO PANIK <span style={{ color: colors.orange }}>Restaurant</span>
+      <header className="flex flex-col items-center px-4 py-16 text-center">
+        <h1 className="text-[3.5rem] md:text-[6rem] leading-[0.9] m-0">
+          NO PANIK <span style={{ color: "var(--np-orange)" }}>Restaurant</span>
         </h1>
 
-        <div className="max-w-[1200px] mx-auto mt-12 px-4 w-full">
-          <h3 className="text-center text-3xl mb-8 text-np-dark font-bold uppercase tracking-tight">
+        <div className="w-full max-w-[1200px] mx-auto mt-12 px-4">
+          <h3 className="mb-8 text-3xl font-bold uppercase tracking-tight">
             Nos Incontournables
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {signatures.map((plat) => (
               <div key={plat.id} className="menu-card text-center group">
-                <div className="overflow-hidden rounded-[30px_10px_30px_10px] mb-6 h-48 bg-gray-100 border-2 border-np-dark/5">
+                <div className="overflow-hidden rounded-[30px_10px_30px_10px] mb-6 h-48 bg-gray-100 border-2 border-black/5">
                   <img
                     src={plat.image}
                     alt={plat.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    className="object-cover w-full h-full transition duration-500 group-hover:scale-110"
                   />
                 </div>
-                <h4 className="text-xl mb-1 text-np-dark font-black">
-                  {plat.name}
-                </h4>
-                <p className="text-sm text-gray-500 mb-4 italic leading-tight px-4">
+                <h4 className="mb-1 text-xl font-black">{plat.name}</h4>
+                <p className="px-4 mb-4 text-sm italic leading-tight text-gray-500 font-['Space_Grotesk']">
                   {plat.description}
                 </p>
-                <span className="text-np-orange font-black text-2xl">
+                <span
+                  className="text-2xl font-black"
+                  style={{ color: "var(--np-orange)" }}
+                >
                   {plat.price}€
                 </span>
               </div>
@@ -115,31 +76,31 @@ const Menu: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center py-24 w-full">
-          <div className="w-24 h-3 bg-[#4a9a93] rounded-full mb-4 rotate-2 shadow-sm" />
-          <span className="text-5xl my-2 drop-shadow-md">✨</span>
-          <div className="w-40 h-3 bg-[#e85d3f] rounded-full mt-4 -rotate-3 shadow-md" />
+        <div className="flex flex-col items-center justify-center w-full py-16 md:py-24">
+          <div
+            className="w-24 h-3 rounded-full mb-4 rotate-2 shadow-sm"
+            style={{ backgroundColor: "var(--np-teal)" }}
+          />
+          <span className="my-2 text-5xl drop-shadow-md">✨</span>
+          <div
+            className="w-40 h-3 rounded-full mt-4 -rotate-3 shadow-md"
+            style={{ backgroundColor: "var(--np-orange)" }}
+          />
         </div>
 
-        <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
+        {/* Boutons de navigation avec ton style .btn-groovy adapté */}
+        <div className="flex flex-wrap justify-center gap-6 mt-5 px-4">
           <button
             type="button"
             onClick={() => setActiveSheet("food")}
+            className="btn-groovy"
             style={{
-              padding: "15px 30px",
-              fontWeight: 900,
-              textTransform: "uppercase",
-              cursor: "pointer",
-              border: `3px solid ${colors.dark}`,
               backgroundColor:
-                activeSheet === "food" ? colors.dark : colors.orange,
-              color: "white",
-              borderRadius: "40px 10px 30px 5px",
+                activeSheet === "food" ? "var(--np-dark)" : "var(--np-orange)",
               boxShadow:
-                activeSheet === "food" ? "none" : `6px 6px 0px ${colors.dark}`,
+                activeSheet === "food" ? "none" : "6px 6px 0px var(--np-dark)",
               transform:
                 activeSheet === "food" ? "translate(4px, 4px)" : "none",
-              transition: "all 0.2s",
             }}
           >
             La Carte
@@ -147,23 +108,16 @@ const Menu: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveSheet("drinks")}
+            className="btn-groovy"
             style={{
-              padding: "15px 30px",
-              fontWeight: 900,
-              textTransform: "uppercase",
-              cursor: "pointer",
-              border: `3px solid ${colors.dark}`,
               backgroundColor:
-                activeSheet === "drinks" ? colors.dark : colors.teal,
-              color: "white",
-              borderRadius: "10px 40px 5px 30px",
+                activeSheet === "drinks" ? "var(--np-dark)" : "var(--np-teal)",
               boxShadow:
                 activeSheet === "drinks"
                   ? "none"
-                  : `6px 6px 0px ${colors.dark}`,
+                  : "6px 6px 0px var(--np-dark)",
               transform:
                 activeSheet === "drinks" ? "translate(4px, 4px)" : "none",
-              transition: "all 0.2s",
             }}
           >
             Drinks
@@ -171,33 +125,18 @@ const Menu: React.FC = () => {
         </div>
       </header>
 
-      <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "40px",
-          }}
-        >
+      <main className="max-w-[1200px] mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
           {activeSheet === "food" ? (
             <>
-              {/* COLONNE PLATS & DESSERTS */}
-              <div>
+              {/* COLONNE PLATS */}
+              <div className="space-y-6">
                 <span
-                  style={{
-                    background: colors.dark,
-                    color: colors.beige,
-                    padding: "5px 15px",
-                    fontSize: "0.8rem",
-                    fontWeight: 900,
-                    borderRadius: "5px",
-                    display: "inline-block",
-                    marginBottom: "25px",
-                  }}
+                  className="inline-block px-4 py-1 mb-6 text-xs font-black rounded text-white uppercase"
+                  style={{ backgroundColor: "var(--np-dark)" }}
                 >
                   NOS PLATS
                 </span>
-
                 {[
                   {
                     n: "Thieb Poisson",
@@ -224,177 +163,79 @@ const Menu: React.FC = () => {
                     p: "12€",
                     d: "Cheveux d'anges revisités, sauce oignons",
                   },
-                  {
-                    n: "Tilapia Grillé",
-                    p: "13€",
-                    d: "Accompagnement au choix (riz, aloko ou atiéké)",
-                  },
-                  {
-                    n: "Daurade Grillée",
-                    p: "15€",
-                    d: "Accompagnement au choix (riz, aloko ou atiéké)",
-                  },
+                  { n: "Tilapia Grillé", p: "13€", d: "Riz, aloko ou atiéké" },
+                  { n: "Daurade Grillée", p: "15€", d: "Riz, aloko ou atiéké" },
                 ].map((item) => (
-                  <div key={item.n} style={{ marginBottom: "20px" }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <h4
-                        style={{
-                          margin: 0,
-                          fontSize: "1.1rem",
-                          fontWeight: 800,
-                        }}
-                      >
+                  <div key={item.n} className="group font-['Space_Grotesk']">
+                    <div className="flex items-center justify-between">
+                      <h4 className="m-0 text-base md:text-lg font-extrabold uppercase">
                         {item.n}
                       </h4>
+                      <div className="flex-grow border-b-2 border-dotted border-black/20 mx-3 mb-1" />
                       <div
-                        style={{
-                          flexGrow: 1,
-                          borderBottom: "2px dotted rgba(0,0,0,0.2)",
-                          margin: "0 10px",
-                        }}
-                      />
-                      <div
-                        style={{
-                          background: colors.orange,
-                          color: "white",
-                          minWidth: "45px",
-                          height: "45px",
-                          borderRadius: "50%",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontWeight: 900,
-                          boxShadow: `3px 3px 0px ${colors.dark}`,
-                        }}
+                        className="flex items-center justify-center min-w-[45px] h-[45px] font-black text-white rounded-full shadow-[3px_3px_0px_var(--np-dark)]"
+                        style={{ backgroundColor: "var(--np-orange)" }}
                       >
                         {item.p}
                       </div>
                     </div>
-                    <p
-                      style={{
-                        fontSize: "0.75rem",
-                        opacity: 0.7,
-                        fontStyle: "italic",
-                        marginTop: "4px",
-                        textTransform: "uppercase",
-                      }}
-                    >
+                    <p className="mt-1 text-[10px] md:text-xs italic opacity-60 uppercase">
                       {item.d}
                     </p>
                   </div>
                 ))}
 
                 <div
-                  style={{
-                    marginTop: "40px",
-                    textAlign: "center",
-                    padding: "20px",
-                    border: `2px solid ${colors.teal}`,
-                    borderRadius: "20px",
-                    background: "white",
-                  }}
+                  className="p-6 mt-10 bg-white border-2 rounded-3xl"
+                  style={{ borderColor: "var(--np-teal)" }}
                 >
                   <h3
-                    style={{
-                      color: colors.teal,
-                      fontSize: "1.2rem",
-                      fontWeight: 900,
-                      marginBottom: "15px",
-                    }}
+                    className="mb-4 text-lg font-black uppercase text-center"
+                    style={{ color: "var(--np-teal)" }}
                   >
                     DESSERTS
                   </h3>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      marginBottom: "10px",
-                      fontWeight: 700,
-                    }}
-                  >
+                  <div className="flex justify-between font-bold border-b border-gray-100 pb-2 uppercase font-['Space_Grotesk']">
                     <span>THIAKRY</span> <span>4€</span>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      fontWeight: 700,
-                    }}
-                  >
+                  <div className="flex justify-between font-bold pt-2 uppercase font-['Space_Grotesk']">
                     <span>BEIGNETS</span> <span>3,5€</span>
                   </div>
                 </div>
               </div>
 
-              {/* COLONNE SIGNATURES & SNACKS */}
-              <div>
+              {/* COLONNE SPÉCIAUX & SNACKS */}
+              <div className="space-y-10">
                 <div
-                  style={{
-                    border: `4px solid ${colors.orange}`,
-                    padding: "30px",
-                    borderRadius: "50px 15px",
-                    backgroundColor: "white",
-                    position: "relative",
-                    marginBottom: "30px",
-                  }}
+                  className="relative p-8 bg-white border-4 rounded-[50px_15px] shadow-lg"
+                  style={{ borderColor: "var(--np-orange)" }}
                 >
                   <div
-                    style={{
-                      position: "absolute",
-                      top: "-15px",
-                      right: "-10px",
-                      background: colors.orange,
-                      color: "white",
-                      padding: "5px 15px",
-                      fontWeight: 900,
-                      transform: "rotate(10deg)",
-                      border: `2px solid ${colors.dark}`,
-                      fontSize: "0.7rem",
-                    }}
+                    className="absolute -top-4 -right-2 text-white px-3 py-1 font-black text-[10px] rotate-12 border-2 border-black"
+                    style={{ backgroundColor: "var(--np-orange)" }}
                   >
                     FAIT MAISON
                   </div>
                   <h3
-                    style={{
-                      color: colors.orange,
-                      marginBottom: "25px",
-                      fontSize: "1.6rem",
-                      fontWeight: 900,
-                    }}
+                    className="mb-6 text-2xl font-black uppercase"
+                    style={{ color: "var(--np-orange)" }}
                   >
                     PLATS SPÉCIAUX
                   </h3>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "25px",
-                    }}
-                  >
+                  <div className="space-y-6 font-['Space_Grotesk']">
                     <div>
-                      <h4 style={{ fontSize: "1.1rem", fontWeight: 800 }}>
-                        ÉTODIÉ <span style={{ float: "right" }}>13€</span>
+                      <h4 className="flex justify-between font-extrabold text-lg uppercase">
+                        ÉTODIÉ <span>13€</span>
                       </h4>
-                      <p style={{ fontSize: "0.75rem", opacity: 0.7 }}>
+                      <p className="text-xs opacity-60">
                         Manioc, viande & poisson fumé.
                       </p>
                     </div>
-                    <div
-                      style={{
-                        borderTop: "1px solid #eee",
-                        paddingTop: "15px",
-                      }}
-                    >
-                      <h4 style={{ fontSize: "1.1rem", fontWeight: 800 }}>
-                        SOUPOUKANDJA <span style={{ float: "right" }}>13€</span>
+                    <div className="pt-4 border-t border-gray-100">
+                      <h4 className="flex justify-between font-extrabold text-lg uppercase">
+                        SOUPOUKANDJA <span>13€</span>
                       </h4>
-                      <p style={{ fontSize: "0.75rem", opacity: 0.7 }}>
+                      <p className="text-xs opacity-60">
                         Gombo, fruits de mer, bœuf & crabe.
                       </p>
                     </div>
@@ -402,74 +243,27 @@ const Menu: React.FC = () => {
                 </div>
 
                 <div
-                  style={{
-                    background: colors.dark,
-                    color: "white",
-                    padding: "30px",
-                    borderRadius: "20px",
-                  }}
+                  className="p-8 text-white rounded-3xl shadow-xl"
+                  style={{ backgroundColor: "var(--np-dark)" }}
                 >
                   <h3
-                    style={{
-                      color: colors.orange,
-                      marginBottom: "20px",
-                      fontWeight: 900,
-                    }}
+                    className="mb-6 text-xl font-black uppercase"
+                    style={{ color: "var(--np-orange)" }}
                   >
                     SNACKS
                   </h3>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "15px",
-                    }}
-                  >
-                    <div>
+                  <div className="space-y-4 font-['Space_Grotesk']">
+                    {["FATAYAS", "ALOKO", "SANDWICH"].map((s) => (
                       <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          fontWeight: 800,
-                        }}
+                        key={s}
+                        className="flex justify-between font-bold border-b border-white/10 pb-2"
                       >
-                        <span>FATAYAS</span> <span>5€ | 10€</span>
+                        <span>{s}</span>{" "}
+                        <span>5€ {s === "FATAYAS" && "| 10€"}</span>
                       </div>
-                      <p style={{ fontSize: "0.7rem", color: "#aaa" }}>
-                        Petit (5€) | Grand (10€)
-                      </p>
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        fontWeight: 800,
-                      }}
-                    >
-                      <span>ALOKO</span> <span>5€</span>
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        fontWeight: 800,
-                      }}
-                    >
-                      <span>SANDWICH</span> <span>5€</span>
-                    </div>
-                    <div>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          fontWeight: 800,
-                        }}
-                      >
-                        <span>AILES DE POULET</span> <span>5€ | 10€</span>
-                      </div>
-                      <p style={{ fontSize: "0.7rem", color: "#aaa" }}>
-                        Petit (5€) | Grand (10€)
-                      </p>
+                    ))}
+                    <div className="flex justify-between font-bold">
+                      <span>AILES DE POULET</span> <span>5€ | 10€</span>
                     </div>
                   </div>
                 </div>
@@ -478,275 +272,152 @@ const Menu: React.FC = () => {
           ) : (
             <>
               {/* BOISSONS CHAUDES & SOFTS */}
-              <div>
+              <div className="space-y-8">
                 <div
-                  style={{
-                    background: "white",
-                    padding: "30px",
-                    borderRadius: "20px",
-                    border: `3px solid ${colors.teal}`,
-                    marginBottom: "30px",
-                  }}
+                  className="p-8 bg-white border-4 rounded-3xl shadow-sm"
+                  style={{ borderColor: "var(--np-teal)" }}
                 >
                   <h3
+                    className="pb-2 mb-6 text-xl font-black border-b-2 uppercase"
                     style={{
-                      color: colors.teal,
-                      borderBottom: `2px solid ${colors.teal}`,
-                      paddingBottom: "10px",
-                      marginBottom: "20px",
-                      fontSize: "1.3rem",
-                      fontWeight: 900,
+                      color: "var(--np-teal)",
+                      borderColor: "var(--np-teal)",
                     }}
                   >
                     HOT DRINKS
                   </h3>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                      fontWeight: 700,
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                  <div className="space-y-4 font-bold font-['Space_Grotesk']">
+                    <div className="flex justify-between">
                       <span>EXPRESSO</span> <span>1,5€</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                    <div className="flex justify-between">
                       <span>CAFÉ LONG</span> <span>2,5€</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                    <div className="flex justify-between">
                       <span>THÉ / CAFÉ TOUBA</span> <span>1€</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                    <div className="flex justify-between">
                       <span>CAFÉ TANGANA</span> <span>2€</span>
                     </div>
                   </div>
                 </div>
 
                 <div
-                  style={{
-                    background: "white",
-                    padding: "30px",
-                    borderRadius: "20px",
-                    border: `3px solid ${colors.orange}`,
-                  }}
+                  className="p-8 bg-white border-4 rounded-3xl shadow-sm"
+                  style={{ borderColor: "var(--np-orange)" }}
                 >
                   <h3
+                    className="pb-2 mb-6 text-xl font-black border-b-2 uppercase"
                     style={{
-                      color: colors.orange,
-                      borderBottom: `2px solid ${colors.orange}`,
-                      paddingBottom: "10px",
-                      marginBottom: "20px",
-                      fontSize: "1.3rem",
-                      fontWeight: 900,
+                      color: "var(--np-orange)",
+                      borderColor: "var(--np-orange)",
                     }}
                   >
                     SOFTS
                   </h3>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                      fontWeight: 700,
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                  <div className="space-y-4 font-bold font-['Space_Grotesk']">
+                    <div className="flex justify-between text-sm">
                       <span>TAS MANGO PASSION</span> <span>3€</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                    <div className="flex justify-between text-sm">
                       <span>BISSAP / GINGEMBRE / BAOBAB</span> <span>4€</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                    <div className="flex justify-between text-sm">
                       <span>DITAKH</span> <span>5€</span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <span>SODAS</span> <span>2,5€</span>
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <span>REDBULL</span> <span>3€</span>
+                    <div className="flex justify-between text-sm">
+                      <span>SODAS / REDBULL</span> <span>2,5€+</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* ALCOOLS & BIÈRES */}
-              <div>
+              <div className="space-y-8">
                 <div
-                  style={{
-                    background: colors.dark,
-                    color: colors.beige,
-                    padding: "30px",
-                    borderRadius: "20px",
-                    marginBottom: "30px",
-                  }}
+                  className="p-8 text-white rounded-3xl shadow-xl"
+                  style={{ backgroundColor: "var(--np-dark)" }}
                 >
                   <h3
+                    className="pb-2 mb-6 text-xl font-black border-b uppercase"
                     style={{
-                      color: colors.teal,
-                      borderBottom: "1px solid #444",
-                      paddingBottom: "10px",
-                      marginBottom: "20px",
-                      fontSize: "1.3rem",
-                      fontWeight: 900,
+                      color: "var(--np-teal)",
+                      borderColor: "rgba(255,255,255,0.2)",
                     }}
                   >
                     ALCOOLS
                   </h3>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "12px",
-                      fontSize: "0.9rem",
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <span>PUNCH MAISON (verre/btl)</span> <span>3€ | 6€</span>
+                  <div className="space-y-4 text-sm font-['Space_Grotesk']">
+                    <div className="flex justify-between">
+                      <span>PUNCH MAISON (verre/btl)</span>{" "}
+                      <span
+                        style={{ color: "var(--np-orange)", fontWeight: 900 }}
+                      >
+                        3€ | 6€
+                      </span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
+                    <div className="flex justify-between">
                       <span>JACK DANIEL'S (v/p/g)</span>{" "}
-                      <span>8€ | 15€ | 35€*</span>
+                      <span
+                        style={{ color: "var(--np-orange)", fontWeight: 900 }}
+                      >
+                        8€ | 15€ | 35€*
+                      </span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <span>VODKA / RHUM (v/p)</span> <span>3€ | 5€**</span>
+                    <div className="flex justify-between">
+                      <span>VODKA / RHUM (v/p)</span>{" "}
+                      <span
+                        style={{ color: "var(--np-orange)", fontWeight: 900 }}
+                      >
+                        3€ | 5€**
+                      </span>
                     </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <span>VIN (v/p/g)</span> <span>3€ | 5€ | 10€</span>
+                    <div className="flex justify-between">
+                      <span>VIN (v/p/g)</span>{" "}
+                      <span
+                        style={{ color: "var(--np-orange)", fontWeight: 900 }}
+                      >
+                        3€ | 5€ | 10€
+                      </span>
                     </div>
-                    <p
-                      style={{
-                        fontSize: "0.6rem",
-                        opacity: 0.5,
-                        marginTop: "10px",
-                      }}
-                    >
-                      *40€ après 23h | **7€ après 23h
+                    <p className="text-[10px] opacity-40 mt-4 italic">
+                      *40€ après 23h
                     </p>
                   </div>
                 </div>
 
-                <div
-                  style={{
-                    background: "white",
-                    padding: "30px",
-                    borderRadius: "20px",
-                    border: "1px solid #ddd",
-                  }}
-                >
-                  <h3
-                    style={{
-                      color: colors.dark,
-                      marginBottom: "15px",
-                      fontWeight: 900,
-                    }}
-                  >
-                    BIÈRES (33cl | 50cl | 70cl)
+                <div className="p-8 bg-white border-2 border-gray-200 rounded-3xl">
+                  <h3 className="mb-6 text-lg font-black uppercase">
+                    BIÈRES (33 / 50 / 70cl)
                   </h3>
-                  {[
-                    { n: "LEFFE", p: "2€ | 3€ | 5€" },
-                    { n: "GUINNESS", p: "4€ (33cl)" },
-                    { n: "HEINEKEN", p: "2€ | 3€ | 5€" },
-                    { n: "PELFORTH", p: "- | 3€ | -" },
-                    { n: "DESPERADOS", p: "2€ | 3€ | 5€" },
-                  ].map((b) => (
-                    <div
-                      key={b.n}
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        padding: "5px 0",
-                        borderBottom: "1px solid #eee",
-                        fontWeight: 700,
-                      }}
-                    >
-                      <span>{b.n}</span> <span>{b.p}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div
-                  style={{
-                    background: colors.orange,
-                    color: "white",
-                    padding: "20px",
-                    borderRadius: "20px",
-                    marginTop: "20px",
-                    textAlign: "center",
-                  }}
-                >
-                  <h4 style={{ fontWeight: 900 }}>FORMULES SPÉCIALES</h4>
-                  <p style={{ fontSize: "0.8rem" }}>
-                    3x GUINNESS (33cl) ou 3x HEINEKEN (70cl) :{" "}
-                    <span style={{ fontSize: "1.2rem", fontWeight: 900 }}>
-                      12€
-                    </span>
-                  </p>
+                  <div className="space-y-3 font-bold text-sm font-['Space_Grotesk']">
+                    {[
+                      "LEFFE",
+                      "GUINNESS (33cl)",
+                      "HEINEKEN",
+                      "PELFORTH (50cl)",
+                      "DESPERADOS",
+                    ].map((b) => (
+                      <div
+                        key={b}
+                        className="flex justify-between border-b border-gray-50 pb-1"
+                      >
+                        <span>{b}</span>{" "}
+                        <span>{b.includes("GUINNESS") ? "4€" : "Dès 2€"}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div
+                    className="mt-6 p-4 text-white rounded-xl text-center"
+                    style={{ backgroundColor: "var(--np-orange)" }}
+                  >
+                    <h4 className="font-black text-sm uppercase">
+                      FORMULE SPÉCIALE
+                    </h4>
+                    <p className="text-xl font-black font-['Space_Grotesk']">
+                      3x BIÈRES (G) : 12€
+                    </p>
+                  </div>
                 </div>
               </div>
             </>
@@ -754,25 +425,14 @@ const Menu: React.FC = () => {
         </div>
       </main>
 
-      <footer
-        style={{
-          marginTop: "80px",
-          textAlign: "center",
-          paddingBottom: "40px",
-        }}
-      >
+      <footer className="px-4 mt-20 text-center">
         <p
-          style={{
-            fontFamily: "'Permanent Marker', cursive",
-            fontSize: "1.8rem",
-            color: colors.yellow,
-            transform: "rotate(-2deg)",
-            marginBottom: "10px",
-          }}
+          className="mb-2 text-3xl handwritten"
+          style={{ color: "var(--np-yellow)" }}
         >
           Le goût authentique du Prado
         </p>
-        <p style={{ fontSize: "0.7rem", letterSpacing: "3px", opacity: 0.6 }}>
+        <p className="text-[10px] font-bold tracking-[3px] opacity-40 uppercase">
           NO PANIK SHOP • 7 PASSAGE DU PRADO • PARIS
         </p>
       </footer>
