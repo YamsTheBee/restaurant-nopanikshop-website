@@ -137,7 +137,7 @@ const Lifestyle: React.FC = () => {
 
             <div className="mt-10 pt-6 border-t border-white/10 text-center">
               <p className="text-[10px] uppercase font-black tracking-widest text-white/40">
-                Situé à l'étage du shop
+                Situé à coté du shop
               </p>
             </div>
           </article>
