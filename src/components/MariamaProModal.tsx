@@ -39,23 +39,6 @@ const BriefcaseIcon = () => (
   </svg>
 );
 
-const GithubIcon = ({ size = 20 }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <title>GitHub</title>
-    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-  </svg>
-);
-
 interface MariamaProModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -81,11 +64,9 @@ const profilePro = {
     "Figma",
     "Git / GitHub",
   ],
-  github: "https://github.com/YamsTheBee",
 };
 
 const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
-  // Gestion du scroll du body
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -99,30 +80,26 @@ const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
 
   if (!isOpen) return null;
 
-  // Utilisation de createPortal pour détacher le modal du contexte du Footer
   return createPortal(
     <dialog
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-xl cursor-pointer"
       aria-labelledby="mariama-pro-title"
       open={isOpen}
-      onClick={onClose} // Note : Ferme si on clique sur le fond (mais pas sur le contenu)
+      onClick={onClose}
       onKeyDown={(e) => {
-        if (e.key === "Escape") {
-          onClose();
-        }
+        if (e.key === "Escape") onClose();
       }}
     >
-      <button
-        type="button"
-        className="relative bg-white w-full max-w-4xl rounded-[2.5rem] md:rounded-[3rem] shadow-2xl animate-in fade-in zoom-in duration-300 max-h-[90vh] flex flex-col cursor-default"
+      <div
+        className="relative bg-white w-full max-w-4xl rounded-[2.5rem] md:rounded-[3rem] shadow-2xl animate-in fade-in zoom-in duration-300 max-h-[90vh] flex flex-col cursor-default overflow-hidden"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={(e) => e.stopPropagation()}
       >
         {/* HEADER */}
-        <div className="flex justify-between items-center p-6 md:p-8 border-b bg-gradient-to-r from-indigo-50 via-slate-50 to-slate-100 rounded-t-[2.5rem] md:rounded-t-[3rem]">
+        <div className="flex justify-between items-center p-6 md:p-8 border-b bg-gradient-to-r from-indigo-50 via-slate-50 to-slate-100">
           <div className="flex items-center gap-4 md:gap-6">
             <div className="relative">
-              <div className="w-24 h-24 md:w-40 md:h-40 rounded-full border-2 border-indigo-500 p-1 bg-white shadow-sm flex items-center justify-center overflow-hidden">
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-indigo-500 p-1 bg-white shadow-sm flex items-center justify-center overflow-hidden">
                 <img
                   src={photoMariama}
                   alt="Mariama"
@@ -133,11 +110,11 @@ const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
                       "https://ui-avatars.com/api/?name=Mariama&background=6366f1&color=fff";
                   }}
                 />
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-green-600 text-white text-[8px] md:text-[10px] font-black px-2 md:px-3 py-1 rounded-full uppercase tracking-tighter border-2 border-white shadow-md z-10 whitespace-nowrap">
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-green-600 text-white text-[8px] md:text-[10px] font-black px-2 md:px-3 py-1 rounded-full uppercase tracking-tighter border-2 border-white shadow-md z-10 whitespace-nowrap animate-pulse">
                   #OpenToWork
                 </div>
               </div>
-              <div className="absolute bottom-1 right-1 p-1.5 md:p-2 bg-indigo-600 text-white rounded-xl border-2 border-white shadow-lg">
+              <div className="absolute bottom-0 right-0 p-1.5 md:p-2 bg-indigo-600 text-white rounded-xl border-2 border-white shadow-lg">
                 <CodeIcon size={14} />
               </div>
             </div>
@@ -166,14 +143,13 @@ const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
         </div>
 
         {/* CONTENU */}
-        <div className="p-6 md:p-10 overflow-y-auto flex-1">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
-            {/* COLONNE GAUCHE */}
+        <div className="p-6 md:p-10 overflow-y-auto flex-1 bg-white">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div className="lg:col-span-3 space-y-6">
               <h4 className="text-lg font-bold border-l-4 border-indigo-600 pl-3">
                 Résumé
               </h4>
-              <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
+              <div className="space-y-4 text-slate-600 text-sm leading-relaxed text-left">
                 <p>
                   Développeuse <strong>full-stack</strong> passionnée, je
                   conçois des applications centrées sur l’humain, alliant{" "}
@@ -182,15 +158,13 @@ const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
                 <p>
                   Expertise : <strong>React (TS)</strong>,{" "}
                   <strong>Node.js</strong> et <strong>MySQL</strong>. Je
-                  maîtrise tout le cycle : de Figma au déploiement sécurisé avec
-                  optimisation SEO.
+                  maîtrise tout le cycle : de Figma au déploiement sécurisé.
                 </p>
-                <p className="font-semibold text-slate-700">
+                <p className="font-semibold text-slate-700 italic">
                   🎯 Objectif : des solutions web durables et performantes.
                 </p>
               </div>
 
-              {/* SKILLS */}
               <div className="flex flex-wrap gap-2">
                 {profilePro.skills.map((skill) => (
                   <span
@@ -203,26 +177,13 @@ const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
               </div>
             </div>
 
-            {/* COLONNE DROITE */}
-            <div className="lg:col-span-2 space-y-6">
-              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
-                  Digital
-                </h4>
-                <a
-                  href={profilePro.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-200 hover:border-indigo-500 transition-all"
-                >
-                  <GithubIcon size={20} />
-                  <span className="font-medium text-sm">GitHub</span>
-                </a>
+            <div className="lg:col-span-2 flex flex-col justify-center">
+              <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100 mb-6 italic text-sm text-slate-500 text-center">
+                "Codé avec ❤️ & beaucoup de café au Passage du Prado."
               </div>
-
               <a
                 href={`mailto:${profilePro.email}?subject=Collaboration`}
-                className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-md"
+                className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg active:scale-95"
               >
                 <BriefcaseIcon />
                 Me contacter
@@ -230,7 +191,7 @@ const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
             </div>
           </div>
         </div>
-      </button>
+      </div>
     </dialog>,
     document.body,
   );
