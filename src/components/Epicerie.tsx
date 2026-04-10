@@ -52,26 +52,31 @@ const Epicerie: React.FC = () => {
         aria-hidden="true"
       />
 
-      <div className="absolute top-0 left-0 w-full py-3 bg-white/5 border-b border-white/10 z-20 overflow-hidden">
-        <div className="animate-slide whitespace-nowrap">
-          <span className="text-sm font-bold uppercase tracking-widest text-white/90 font-['Space_Grotesk'] mx-4">
-            {scrollingText}
+      <div className="absolute top-0 left-0 w-full py-5 bg-black/50 backdrop-blur-md border-b border-white/10 z-20 overflow-hidden">
+        <div className="animate-slide whitespace-nowrap flex items-center">
+          <span className="flex items-center text-lg md:text-xl font-semibold uppercase tracking-[0.2em] text-white font-['Space_Grotesk'] mx-12">
+            🍔 {scrollingText} 🔥
           </span>
+
+          <span className="text-white/30 text-xl">✦</span>
+
           <span
-            className="text-sm font-bold uppercase tracking-widest text-white/90 font-['Space_Grotesk'] mx-4"
+            className="flex items-center text-lg md:text-xl font-semibold uppercase tracking-[0.2em] text-white font-['Space_Grotesk'] mx-12"
             aria-hidden="true"
           >
-            {scrollingText}
+            🌯 {scrollingText} 🔥
           </span>
+
+          <span className="text-white/30 text-xl">✦</span>
+
           <span
-            className="text-sm font-bold uppercase tracking-widest text-white/90 font-['Space_Grotesk'] mx-4"
+            className="flex items-center text-lg md:text-xl font-semibold uppercase tracking-[0.2em] text-white font-['Space_Grotesk'] mx-12"
             aria-hidden="true"
           >
-            {scrollingText}
+            🍗 {scrollingText} 🔥
           </span>
         </div>
       </div>
-
       <div className="relative z-10 px-6 mx-auto mt-16 max-w-7xl md:mt-24">
         <header className="flex flex-col items-center mb-16 text-center md:mb-24">
           <span
@@ -89,7 +94,7 @@ const Epicerie: React.FC = () => {
           </h2>
 
           <p
-            className="mt-6 text-xl md:text-2xl italic font-medium max-w-2xl handwritten"
+            className="mt-6 text-xl md:text-3xl  font-medium max-w-2xl handwritten"
             style={{ color: "var(--np-yellow)" }}
           >
             Ramenez le goût du pays directement dans votre cuisine
