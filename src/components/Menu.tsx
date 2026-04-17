@@ -1,15 +1,34 @@
 import type React from "react";
 import { useState } from "react";
 import logoNPK from "../assets/images/logoNopanik.png";
+import Thieb from "../assets/images/Thieboudieune.jpg";
+import DibiImg from "../assets/images/dibiviande.jpg";
+import ÉtodiéImg from "../assets/images/étodié.jpg";
 
 const signatures = [
+    {
+    id: "thieb",
+    name: "THIEB POISSON",
+    description:
+      "Poisson farci aux herbes & épices, légumes et riz cuits dans la sauce.",
+    price: 13,
+    image: Thieb,
+  },
   {
     id: "etodie",
     name: "ÉTODIÉ",
     description:
       "Plat à base de feuilles de manioc, viande & poisson fumé. Servi avec du riz blanc.",
     price: 13,
-    image: logoNPK,
+    image: ÉtodiéImg,
+  },
+    {
+    id: "dibi",
+    name: "DIBI",
+    description:
+      "Morceaux de viandes braisés (poulet ou mouton), accompagnés de crudités.",
+    price: 15,
+    image: DibiImg,
   },
   {
     id: "soupe-kandja",
@@ -19,14 +38,8 @@ const signatures = [
     price: 13,
     image: logoNPK,
   },
-  {
-    id: "dibi",
-    name: "DIBI",
-    description:
-      "Morceaux de viandes braisés (poulet ou mouton), accompagnés de crudités.",
-    price: 15,
-    image: logoNPK,
-  },
+
+
 ];
 
 const Menu: React.FC = () => {
@@ -51,7 +64,7 @@ const Menu: React.FC = () => {
             Nos Incontournables
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {signatures.map((plat) => (
               <div key={plat.id} className="menu-card text-center group">
                 <div className="overflow-hidden rounded-[30px_10px_30px_10px] mb-6 h-48 bg-gray-100 border-2 border-black/5">

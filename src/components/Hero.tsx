@@ -4,7 +4,6 @@ const Hero = () => {
       {/* Background Blobs */}
       <div className="blob w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-np-orange top-[-5%] left-[-10%] opacity-50 md:opacity-100" />
       <div className="blob w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-np-teal bottom-[5%] right-[-5%] opacity-50 md:opacity-100" />
-
       <div className="relative z-20 text-center px-6 max-w-5xl">
         {/* Badge */}
         <span className="inline-block bg-np-teal/10 text-np-teal px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 border border-np-teal/20">
@@ -52,6 +51,7 @@ const Hero = () => {
         <div className="mt-8 md:mt-16">
           <a
             href="#menu"
+            id="menu" // ✅ AJOUT ICI
             className="btn-groovy px-8 py-4 md:px-10 md:py-5 text-lg md:text-xl inline-block w-full sm:w-auto"
             aria-label="Voir la carte du restaurant africain à Paris 10"
           >
