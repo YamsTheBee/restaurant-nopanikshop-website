@@ -138,7 +138,7 @@ const Footer = () => {
                 className="group relative ml-1 text-white font-bold transition-all duration-300 cursor-pointer overflow-hidden"
               >
                 <span className="group-hover:text-[#f19c38] transition-colors duration-300">
-                  Mariama Diaw
+                  Étiket by Yams
                 </span>
                 {/* Ligne de soulignement animée */}
                 <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-[#f19c38] transition-all duration-300 group-hover:w-full" />

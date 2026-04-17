@@ -10,22 +10,25 @@ interface EpicerieItem {
 const EPICERIE_ITEMS: EpicerieItem[] = [
   {
     id: "epices",
-    title: "Épices Secrètes",
-    description: "Mélanges maison pour pimper vos plats.",
+    title: "Épices africaines maison",
+    description:
+      "Mélanges d’épices africaines artisanales pour cuisiner mafé, yassa et plats traditionnels.",
     image:
       "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400",
   },
   {
     id: "tropicaux",
-    title: "Trésors Tropicaux",
-    description: "Bananes plantains mûres, ignames et gombos.",
+    title: "Produits tropicaux frais",
+    description:
+      "Bananes plantain, ignames, gombos et produits africains frais disponibles à Paris.",
     image:
       "https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&q=80&w=400",
   },
   {
     id: "drinks",
-    title: "Drinks Frais",
-    description: "Bissap et Gnamankoudji faits maison.",
+    title: "Boissons africaines artisanales",
+    description:
+      "Bissap, gingembre (gnamankoudji) et jus maison pour une expérience authentique.",
     image:
       "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?auto=format&fit=crop&q=80&w=400",
   },
@@ -33,7 +36,7 @@ const EPICERIE_ITEMS: EpicerieItem[] = [
 
 const Epicerie: React.FC = () => {
   const scrollingText =
-    "• Ramenez le Goût à la Maison • Mangez sur Place, Cuisinez chez Vous • Épicerie No Panik Shop •";
+    "• Ramenez le Goût à la Maison • Mangez sur Place, Cuisinez chez Vous • Épicerie No Panik Shop •Découvrez une sélection de produits africains authentiques à Paris: épices, boissons traditionnelles et ingrédients pour cuisiner chez vous";
 
   return (
     <section
@@ -145,6 +148,12 @@ const Epicerie: React.FC = () => {
           </a>
           <p className="mt-4 text-[10px] uppercase font-bold tracking-widest opacity-60 text-white">
             Disponibilité selon arrivage hebdomadaire
+          </p>
+          <p>
+            {" "}
+            Découvrez une sélection de produits africains authentiques à Paris :
+            épices, boissons traditionnelles et ingrédients pour cuisiner chez
+            vous
           </p>
         </div>
       </div>

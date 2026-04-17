@@ -66,9 +66,15 @@ const ClientReviews: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         <header className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter">
-            Nos clients{" "}
-            <span className="handwritten text-np-orange">disent</span>
+            Avis clients{" "}
+            <span className="handwritten text-np-orange">NoPanik</span>
           </h2>
+
+          <p className="sr-only">
+            Découvrez les avis de nos clients sur notre restaurant africain
+            situé à Paris 10. Cuisine sénégalaise, plats faits maison et
+            ambiance chaleureuse.
+          </p>
         </header>
 
         <div className="relative">
@@ -83,7 +89,7 @@ const ClientReviews: React.FC = () => {
                   <div className="!w-10 !h-10 flex-shrink-0">
                     <img
                       src={r.photo}
-                      alt={r.name}
+                      alt={`Avis client ${r.name} - restaurant africain NoPanik Paris 10`}
                       className="w-full h-full object-cover rounded-full border border-black/10"
                     />
                   </div>

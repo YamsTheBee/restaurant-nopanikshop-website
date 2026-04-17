@@ -162,6 +162,19 @@ h5 {
   }
 }
 
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+
 .animate-slide {
   display: flex;
   animation: slide 30s linear infinite;
@@ -275,4 +288,22 @@ a {
   font-size: 0.85rem;
   text-transform: uppercase;
   color: var(--np-orange);
+}
+
+@keyframes coffee-steam {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+}
+
+.animate-coffee-steam {
+  animation: coffee-steam 1.5s ease-in-out infinite;
 }

@@ -1,4 +1,3 @@
-// import { useEffect, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 import { X, Coffee, ShieldCheck, Lock, Terminal } from "lucide-react";
 import photoMariama from "../assets/images/ImgClient4.png";
@@ -168,10 +167,10 @@ const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
 
               <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
                 <p>
-                  Développeuse web & web mobile <strong>full-stack</strong>{" "}
-                  passionnée, je conçois et développe des applications web
-                  modernes, utiles et centrées sur l’humain, avec une attention
-                  particulière portée à l’<strong>UX/UI</strong>, à l’
+                  <strong> Passionnée</strong> , je conçois et développe des
+                  applications web modernes, utiles et centrées sur l’humain,
+                  avec une attention particulière portée à l’
+                  <strong>UX/UI</strong>, à l’
                   <strong>accessibilité</strong> et à l’
                   <strong>impact social</strong>.
                 </p>
@@ -199,14 +198,16 @@ const MariamaProModal = ({ isOpen, onClose }: MariamaProModalProps) => {
                     Développement structuré, maintenable et orienté bonnes
                     pratiques
                   </li>
-                  <li>Intégration IA & chatboots</li>
+                  <li>Intégration IA & chatbots</li>
                   <li>Versioning et gestion de code avec Git / GitHub</li>
                   <li>Tests unitaires et d’intégration</li>
                   <li>Déploiement d’applications web </li>
                   <li>Configuration d’environnements de production</li>
                   <li>Gestion et configuration de nom de domaine (DNS)</li>
                   <li>
-                    Optimisation SEO technique (balises meta, title, favicon)
+                    Optimisation SEO technique et local (balises meta, title,
+                    structure sémantique, contenu optimisé et référencement
+                    Google)
                   </li>
                   <li>
                     Attention portée à la qualité, la performance et
