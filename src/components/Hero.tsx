@@ -48,10 +48,10 @@ const Hero = () => {
         </p>
 
         {/* CTA */}
+
         <div className="mt-8 md:mt-16">
           <a
             href="#menu"
-            id="menu" // ✅ AJOUT ICI
             className="btn-groovy px-8 py-4 md:px-10 md:py-5 text-lg md:text-xl inline-block w-full sm:w-auto"
             aria-label="Voir la carte du restaurant africain à Paris 10"
           >

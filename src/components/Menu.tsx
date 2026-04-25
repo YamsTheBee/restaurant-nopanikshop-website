@@ -1,6 +1,5 @@
 import type React from "react";
 import { useState } from "react";
-
 import Thieb from "../assets/images/Thieboudieune.jpg";
 import DibiImg from "../assets/images/dibiviande.jpg";
 import ÉtodiéImg from "../assets/images/étodié.jpg";
@@ -45,6 +44,7 @@ const Menu: React.FC = () => {
 
   return (
     <section
+      id="menu"
       className="relative z-50 w-full min-h-screen pb-20 overflow-x-hidden"
       style={{
         backgroundColor: "var(--np-creme)",
