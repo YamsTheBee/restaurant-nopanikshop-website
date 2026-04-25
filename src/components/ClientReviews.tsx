@@ -41,7 +41,7 @@ const reviews: Review[] = [
   },
   {
     id: 4,
-    name: "Mata Dev.",
+    name: "Maya",
     photo: imgCustomer4,
     comment: "Très bonne expérience. Plats copieux et bien présentés.",
     rating: 4,

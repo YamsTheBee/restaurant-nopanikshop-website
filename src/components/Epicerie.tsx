@@ -138,7 +138,7 @@ const Epicerie: React.FC = () => {
 
         <div className="mt-20 text-center">
           <a
-            href="https://wa.me/33123456789"
+            href="https://wa.me/33621744523?text=Bonjour%20je%20souhaite%20commander%20des%20produits%20chez%20NoPanik%20Shop"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-groovy"
