@@ -1,12 +1,12 @@
 import type React from "react";
 import { useState } from "react";
-import logoNPK from "../assets/images/logoNopanik.png";
+
 import Thieb from "../assets/images/Thieboudieune.jpg";
 import DibiImg from "../assets/images/dibiviande.jpg";
 import ÉtodiéImg from "../assets/images/étodié.jpg";
-
+import KandjiaImg from "../assets/images/SoupeKadjia_img.jpg";
 const signatures = [
-    {
+  {
     id: "thieb",
     name: "THIEB POISSON",
     description:
@@ -22,7 +22,7 @@ const signatures = [
     price: 13,
     image: ÉtodiéImg,
   },
-    {
+  {
     id: "dibi",
     name: "DIBI",
     description:
@@ -36,10 +36,8 @@ const signatures = [
     description:
       "Sauce à base de gombos, viande fumée, crabe et crevettes séchées. Servi avec du riz blanc.",
     price: 13,
-    image: logoNPK,
+    image: KandjiaImg,
   },
-
-
 ];
 
 const Menu: React.FC = () => {
