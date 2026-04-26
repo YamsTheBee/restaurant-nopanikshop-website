@@ -49,12 +49,13 @@ const Lifestyle: React.FC = () => {
 
               <p className="text-lg mb-8 text-white/90 leading-relaxed font-medium font-['Space_Grotesk']">
                 Anniversaire, afterwork ou tournage ? Privatisez notre
-                restaurant africain pour une expérience unique au cœur de Paris 10.
+                restaurant africain pour une expérience unique au cœur de Paris
+                10.
               </p>
             </div>
 
             <a
-              href="https://wa.me/33123456789"
+              href="https://wa.me/33621744523?text=Bonjour%20je%20souhaite%20faire%20une%20demande%20de%20devis%20pour%20vos%20services"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-groovy w-full text-center justify-center !bg-white !text-black shadow-none hover:!scale-105"
