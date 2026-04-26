@@ -8,7 +8,7 @@ const Hero = () => {
         {/* Badge */}
 
         <span className="inline-block bg-white/10 text-black px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 border border-np-teal/20">
-          Ouvert du lundi au samedi • 10h30 – 20h • Paris 10
+          Ouvert du lundi au samedi • 10h30 – 20h 
         </span>
 
         {/* H1 Branding */}
