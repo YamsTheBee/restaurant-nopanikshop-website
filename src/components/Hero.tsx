@@ -6,6 +6,7 @@ const Hero = () => {
       <div className="blob w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-np-teal bottom-[5%] right-[-5%] opacity-50 md:opacity-100" />
       <div className="relative z-20 text-center px-6 max-w-5xl">
         {/* Badge */}
+
         <span className="inline-block bg-white/10 text-black px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 border border-np-teal/20">
           Ouvert du lundi au samedi • 10h30 – 20h • Paris 10
         </span>
@@ -16,7 +17,7 @@ const Hero = () => {
           <span className="text-np-orange italic font-medium">PANIK</span>,
           <br className="hidden sm:block" />
           QUE DU{" "}
-          <span className="text-np-teal font-black reveal-taste">GOÛT</span>.
+          <span className="text-np-dark font-black reveal-taste">GOÛT</span>
         </h1>
 
         {/* TEXTE SEO INVISIBLE */}
@@ -29,7 +30,7 @@ const Hero = () => {
 
         {/* CTA */}
 
-        <div className="mt-8 md:mt-36">
+        <div className="mt-36 md:mt-36">
           <a
             href="#menu"
             className="btn-groovy px-8 py-4 md:px-10 md:py-5 text-lg md:text-xl inline-block w-full sm:w-auto"
