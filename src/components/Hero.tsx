@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="blob w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-np-teal bottom-[5%] right-[-5%] opacity-50 md:opacity-100" />
       <div className="relative z-20 text-center px-6 max-w-5xl">
         {/* Badge */}
-        <span className="inline-block bg-np-teal/10 text-np-teal px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 border border-np-teal/20">
+        <span className="inline-block bg-white/10 text-black px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 border border-np-teal/20">
           Ouvert du lundi au samedi • 10h30 – 20h • Paris 10
         </span>
 
@@ -19,27 +19,6 @@ const Hero = () => {
           <span className="text-np-teal font-black reveal-taste">GOÛT</span>.
         </h1>
 
-        {/*  SECTION MÉTRO  */}
-
-        <div className="flex flex-col items-center gap-2 mb-6">
-          <div className="flex items-center gap-2 text-np-dark text-lg md:text-2xl font-medium opacity-80 leading-relaxed">
-            {/* Logo métro style Paris */}
-            <div className="w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-full bg-np-teal text-white text-xs font-bold">
-              M
-            </div>
-
-            <span>
-              <span>
-                L’escale afro-créole à deux pas de Strasbourg Saint-Denis
-              </span>
-            </span>
-          </div>
-
-          <span className="text-sm bg-np-teal/10 text-np-teal px-3 py-1 rounded-full">
-            Ligne 4 • Ligne 8 • Ligne 9
-          </span>
-        </div>
-
         {/* TEXTE SEO INVISIBLE */}
         <p className="sr-only">
           NoPanik est un restaurant africain situé à Paris 10, proche de
@@ -50,13 +29,13 @@ const Hero = () => {
 
         {/* CTA */}
 
-        <div className="mt-8 md:mt-16">
+        <div className="mt-8 md:mt-36">
           <a
             href="#menu"
             className="btn-groovy px-8 py-4 md:px-10 md:py-5 text-lg md:text-xl inline-block w-full sm:w-auto"
             aria-label="Voir la carte du restaurant africain à Paris 10"
           >
-         Découvrir la carte 🍽️
+            Découvrir la carte 🍽️
           </a>
         </div>
       </div>
