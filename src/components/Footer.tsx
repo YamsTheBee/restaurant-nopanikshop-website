@@ -82,7 +82,7 @@ const Footer = () => {
               </h3>
               <address className="not-italic space-y-3 text-sm text-gray-400">
                 <p>📍 7 Passage du Prado, 75010 Paris</p>
-                <p>🕒 Mardi — Dimanche | 10h30 — 20h00</p>
+                <p>🕒 Lundi – Samedi : 10h30 – 20h • Dimanche : Fermé </p>
               </address>
             </div>
 
@@ -96,9 +96,9 @@ const Footer = () => {
                 📸 Instagram
               </a>
               <a
-                href="https://wa.me/33621744523"
+                href="https://wa.me/33621744523?text=Bonjour%20je%20souhaite%20passer%20commande%20chez%20NoPanik%20Shop"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-[#e85d3f] p-3 rounded-full transition-all text-sm font-bold"
               >
                 💬 WhatsApp

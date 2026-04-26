@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="relative z-20 text-center px-6 max-w-5xl">
         {/* Badge */}
         <span className="inline-block bg-np-teal/10 text-np-teal px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 border border-np-teal/20">
-          Ouvert de 10h30 à 20h • Paris 10
+          Ouvert du lundi au samedi • 10h30 – 20h • Paris 10
         </span>
 
         {/* H1 Branding */}
@@ -29,13 +29,14 @@ const Hero = () => {
             </div>
 
             <span>
-              L’escale afro-créole à Paris 10, à deux pas de Strasbourg
-              Saint-Denis
+              <span>
+                L’escale afro-créole à deux pas de Strasbourg Saint-Denis
+              </span>
             </span>
           </div>
 
           <span className="text-sm bg-np-teal/10 text-np-teal px-3 py-1 rounded-full">
-            Métro • Ligne 4 • Ligne 8 • Ligne 9
+            Ligne 4 • Ligne 8 • Ligne 9
           </span>
         </div>
 
@@ -55,7 +56,7 @@ const Hero = () => {
             className="btn-groovy px-8 py-4 md:px-10 md:py-5 text-lg md:text-xl inline-block w-full sm:w-auto"
             aria-label="Voir la carte du restaurant africain à Paris 10"
           >
-            Voir la Carte
+         Découvrir la carte 🍽️
           </a>
         </div>
       </div>
